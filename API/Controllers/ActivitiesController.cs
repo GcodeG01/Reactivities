@@ -8,7 +8,7 @@ using Persistence;
 
 namespace API.Controllers
 {
-    public class ActivitiesController : BaseApiController // endpoint /activities
+    public class ActivitiesController : BaseApiController // endpoint is /activities
     {
         private readonly DataContext _context;
         public ActivitiesController(DataContext context)
@@ -17,7 +17,7 @@ namespace API.Controllers
         }
 
         [HttpGet] // activities
-        public async Task<ActionResult<List<Activity>>> GetActivities()
+        public async Task<ActionResult<List<Activity>>> GetActivities() // ActionResult needs a certain return or will log out error
         {
             return await _context.Activities.ToListAsync();
         }
