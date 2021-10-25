@@ -31,7 +31,9 @@ namespace API.Extensions
                     policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
                 });
             });
+            // Add Mediator
             services.AddMediatR(typeof(List.Handler).Assembly); // Can be any Handler
+            // add Auto Mapper
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
             return services;
